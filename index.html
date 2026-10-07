@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fardeen Sayyed | 2D Animator and Illustrator</title>
+  <meta name="description" content="Portfolio of Fardeen Sayyed — 2D Animator and Illustrator specializing in 2D frame-by-frame animation, comics, visual communication, and storytelling." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: {
+              DEFAULT: '#FBF9F5',
+              dark: '#F2EFE8',
+              card: '#FFFFFF',
+              border: '#E8E3D9',
+            },
+            accent: {
+              red: '#C25E5E',
+              'red-dark': '#A84C4C',
+              'red-light': '#F6EAEA',
+              blue: '#5B7B9E',
+              'blue-dark': '#486483',
+              'blue-light': '#EBF1F7',
+            },
+            ink: {
+              DEFAULT: '#2C2C2C',
+              light: '#585858',
+              muted: '#85837F',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          boxShadow: {
+            'paper': '0 4px 20px -2px rgba(44, 44, 44, 0.05), 0 2px 6px -1px rgba(44, 44, 44, 0.03)',
+            'paper-hover': '0 12px 30px -4px rgba(194, 94, 94, 0.12), 0 4px 12px -2px rgba(44, 44, 44, 0.06)',
+            'editorial': '4px 4px 0px 0px rgba(194, 94, 94, 0.2)',
+            'editorial-solid': '4px 4px 0px 0px #C25E5E',
+          },
+          animation: {
+            'float-subtle': 'floatSubtle 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'spin-slow': 'spin 18s linear infinite',
+          },
+          keyframes: {
+            floatSubtle: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-6px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Clean solid background */
+    body {
+      background-color: #FBF9F5;
+      color: #2C2C2C;
+    }
+
+    /* Custom Selection Color */
+    ::selection {
+      background-color: #F6EAEA;
+      color: #C25E5E;
+    }
+
+    /* Sketchbook Grid & Ruler Accents */
+    .sketchbook-grid {
+      background-image: linear-gradient(to right, rgba(91, 123, 158, 0.06) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(91, 123, 158, 0.06) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .registration-mark {
+      position: relative;
+    }
+    .registration-mark::before, .registration-mark::after {
+      content: '';
+      position: absolute;
+      background: #C25E5E;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F2EFE8;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C25E5E;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #A84C4C;
+    }
+
+    /* Timeline Ruler Ticks */
+    .timeline-ruler {
+      background-image: repeating-linear-gradient(
+        to right,
+        #85837F 0,
+        #85837F 1px,
+        transparent 1px,
+        transparent 10px
+      );
+    }
+
+    /* Modal Animation */
+    .modal-backdrop {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased text-ink selection:bg-accent-red-light selection:text-accent-red min-h-screen flex flex-col justify-between">
+
+  <!-- ==================== MAIN NAVIGATION ==================== -->
+  <header class="sticky top-0 z-40 bg-paper/90 backdrop-blur-md border-b border-paper-border transition-all duration-300" id="main-header">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Name -->
+      <a href="#hero" class="group flex flex-col">
+        <span class="font-serif font-bold text-xl sm:text-2xl tracking-tight text-ink group-hover:text-accent-red transition-colors">FARDEEN SAYYED</span>
+        <span class="text-[10px] uppercase font-mono tracking-widest text-accent-blue font-semibold">Visual Artist & Animator</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <a href="#showreel" class="text-ink-light hover:text-accent-red transition-colors flex items-center gap-1.5 py-1">
+          <span class="text-accent-blue font-mono text-xs">01.</span> Showreel
+        </a>
+        <a href="#projects" class="text-ink-light hover:text-accent-red transition-colors flex items-center gap-1.5 py-1">
+          <span class="text-accent-blue font-mono text-xs">02.</span> Projects
+        </a>
+        <a href="#pipeline" class="text-ink-light hover:text-accent-red transition-colors flex items-center gap-1.5 py-1">
+          <span class="text-accent-blue font-mono text-xs">03.</span> Pipeline & Skills
+        </a>
+        <a href="#contact" class="px-4 py-2 border-2 border-accent-red text-accent-red hover:bg-accent-red hover:text-white transition-all duration-200 font-semibold rounded-md shadow-sm text-xs uppercase tracking-wider">
+          Let's Collaborate
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="md:hidden p-2 rounded-md border border-paper-border text-ink hover:text-accent-red hover:border-accent-red transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-paper border-b border-paper-border px-6 py-4 space-y-3">
+      <a href="#showreel" class="mobile-nav-link block py-2 text-ink hover:text-accent-red font-medium">01. Showreel</a>
+      <a href="#projects" class="mobile-nav-link block py-2 text-ink hover:text-accent-red font-medium">02. Projects</a>
+      <a href="#pipeline" class="mobile-nav-link block py-2 text-ink hover:text-accent-red font-medium">03. Pipeline & Skills</a>
+      <a href="#contact" class="mobile-nav-link block py-2.5 text-center bg-accent-red text-white font-semibold rounded-md text-sm">Contact Me</a>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <main class="flex-grow">
+    <section id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-28 border-b border-paper-border overflow-hidden">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="space-y-6">
+          
+          <!-- Category Tag Pill -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-blue-light border border-accent-blue/30 text-accent-blue text-xs font-semibold uppercase tracking-wider">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon>
+            </svg>
+            <span>2D Animator and Illustrator</span>
+          </div>
+
+          <!-- Big Editorial Heading -->
+          <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-extrabold text-ink tracking-tight leading-[1.15]">
+            About Me
+          </h1>
+
+          <!-- Bio Narrative -->
+          <div class="space-y-4 max-w-3xl">
+            <p class="text-xl sm:text-2xl text-ink font-serif leading-relaxed">
+              A <strong class="text-accent-red font-semibold">visual artist</strong> pursuing a career in <strong class="text-ink font-semibold">animation and Visual Communication</strong>. Specialized in <strong class="text-accent-blue font-semibold">2D frame-by-frame animation</strong> and <strong class="text-ink font-semibold">comic making</strong>.
+            </p>
+            <p class="text-base sm:text-lg text-ink-light leading-relaxed font-normal">
+              Well equipped with good form understanding and line quality. Utmost interest in collaborating on vivid stories and tackling challenges. I enjoy films, books, video games, and music.
+            </p>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="#showreel" class="px-6 py-3.5 bg-accent-red text-white font-semibold rounded-md shadow-editorial hover:bg-accent-red-dark hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all text-sm uppercase tracking-wider flex items-center gap-2">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+              </svg>
+              Watch 2026 Showreel
+            </a>
+            <a href="#projects" class="px-6 py-3.5 bg-white border-2 border-ink text-ink font-semibold rounded-md hover:bg-paper-dark transition-all text-sm uppercase tracking-wider">
+              Explore Projects
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SHOWREEL SECTION ==================== -->
+    <section id="showreel" class="py-20 md:py-28 border-b border-paper-border bg-white relative">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div>
+            <div class="flex items-center gap-2 text-accent-blue font-mono text-xs font-bold uppercase tracking-widest mb-2">
+              <span class="w-2 h-2 rounded-full bg-accent-blue"></span>
+              Featured Motion Reel
+            </div>
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-ink tracking-tight">
+              2026 Animation Showreel
+            </h2>
+          </div>
+          <div class="font-mono text-xs text-ink-muted flex items-center gap-2">
+            <span class="px-2.5 py-1 bg-paper-dark border border-paper-border rounded text-ink font-semibold">1080p @ 60 FPS</span>
+            <span class="px-2.5 py-1 bg-accent-red-light text-accent-red border border-accent-red/20 rounded font-semibold">RUNTIME: 01:34</span>
+          </div>
+        </div>
+
+        <!-- Prominent Video Showreel Container -->
+        <div class="relative group rounded-2xl overflow-hidden border-2 border-accent-red shadow-editorial-solid bg-ink">
+          
+          <!-- Poster / Video Frame Art -->
+          <div class="relative aspect-video w-full bg-gradient-to-tr from-ink via-[#3a3333] to-[#253342] flex items-center justify-center overflow-hidden">
+            
+            <!-- Cinematic Background Graphic Simulation -->
+            <div class="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent-red/40 via-transparent to-transparent"></div>
+            
+            <!-- Studio Animation Grid Backdrop -->
+            <div class="absolute inset-0 opacity-10 sketchbook-grid"></div>
+
+            <!-- Stylized Motion Graphic Composition Inside Video Preview -->
+            <div class="relative z-10 text-center px-4 max-w-xl">
+              
+              <!-- Custom Play Overlay Button -->
+              <button 
+                id="play-showreel-btn"
+                onclick="openVideoModal()" 
+                aria-label="Play 2026 2D Game Animation Showreel"
+                class="w-20 h-20 sm:w-24 sm:h-24 mx-auto rounded-full bg-accent-red hover:bg-accent-red-dark text-white flex items-center justify-center shadow-lg transition-transform duration-300 transform group-hover:scale-110 focus:outline-none focus:ring-4 focus:ring-accent-red/40 cursor-pointer mb-6"
+              >
+                <svg class="w-8 h-8 sm:w-10 sm:h-10 ml-1.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </button>
+
+              <h3 class="font-serif text-xl sm:text-2xl font-bold text-paper mb-2">
+                Combat Systems • Boss Animations • FX Dynamics
+              </h3>
+              <p class="text-xs sm:text-sm text-paper-dark/80 font-mono">
+                Featuring works for indie studio titles & stylized action platformers
+              </p>
+            </div>
+
+            <!-- Frame-Rate and Timecode Badges (Studio Styled) -->
+            <div class="absolute top-4 left-4 z-20 flex items-center gap-2">
+              <span class="px-3 py-1 bg-black/70 backdrop-blur-sm border border-white/20 text-white font-mono text-[11px] rounded tracking-wider flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-accent-red animate-ping"></span>
+                TIMECODE: 00:01:34:00
+              </span>
+              <span class="hidden sm:inline-block px-3 py-1 bg-black/70 backdrop-blur-sm border border-white/20 text-white font-mono text-[11px] rounded">
+                MASTER AUDIO: 48kHz
+              </span>
+            </div>
+
+            <div class="absolute bottom-4 left-4 right-4 z-20 flex flex-wrap items-center justify-between text-white/80 font-mono text-[11px] border-t border-white/10 pt-3">
+              <div class="flex items-center gap-3">
+                <span class="text-accent-red font-bold">SOFTWARE:</span>
+                <span>Spine 2D Professional</span>
+                <span>•</span>
+                <span>Adobe After Effects</span>
+                <span>•</span>
+                <span>Clip Studio Paint</span>
+              </div>
+              <div class="text-accent-blue font-semibold">
+                PRESS TO LAUNCH CINEMATIC VIEWER ↗
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== PROJECT GRID (2x2 LAYOUT) ==================== -->
+    <section id="projects" class="py-20 md:py-28 border-b border-paper-border bg-paper">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-red-light border border-accent-red/30 text-accent-red text-xs font-semibold uppercase tracking-wider mb-3">
+            Portfolio Showcase
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-ink tracking-tight">
+            Selected Animation Projects
+          </h2>
+        </div>
+
+        <!-- 2x2 Project Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+
+          <!-- PROJECT CARD 1: Valkyrie's Ascent -->
+          <div class="group bg-white rounded-xl border-2 border-paper-border hover:border-accent-red transition-all duration-300 shadow-paper hover:shadow-paper-hover flex flex-col overflow-hidden">
+            
+            <!-- Card Visual Header / Preview -->
+            <div class="relative aspect-[16/10] bg-paper-dark overflow-hidden border-b border-paper-border">
+              
+              <!-- Visual Mockup Canvas -->
+              <div class="absolute inset-0 flex items-center justify-center p-6 bg-gradient-to-br from-[#FAF5F0] to-[#EFE7DC]">
+                <!-- Interactive Animated SVG Preview -->
+                <svg class="w-full h-full max-w-[280px] transition-transform duration-500 group-hover:scale-105" viewBox="0 0 240 150" fill="none">
+                  <!-- Ground Line -->
+                  <line x1="20" y1="130" x2="220" y2="130" stroke="#C25E5E" stroke-width="2" stroke-dasharray="4 4"/>
+                  <!-- Motion Arc -->
+                  <path d="M 50 110 Q 120 20 190 110" stroke="#5B7B9E" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 3" opacity="0.7"/>
+                  
+                  <!-- Character Silhouette / Skeleton Walk & Jump Cycle -->
+                  <circle cx="120" cy="45" r="14" fill="#2C2C2C"/>
+                  <path d="M110 59 L130 59 L126 95 L114 95 Z" fill="#C25E5E"/>
+                  <!-- Wings / Cape Deform -->
+                  <path d="M110 65 Q70 40 50 75 Q85 85 110 80" fill="#5B7B9E" opacity="0.8"/>
+                  <path d="M130 65 Q170 40 190 75 Q155 85 130 80" fill="#5B7B9E" opacity="0.8"/>
+                  <!-- IK Legs in stride -->
+                  <line x1="116" y1="95" x2="95" y2="128" stroke="#2C2C2C" stroke-width="4" stroke-linecap="round"/>
+                  <line x1="124" y1="95" x2="145" y2="128" stroke="#2C2C2C" stroke-width="4" stroke-linecap="round"/>
+                  <!-- Weapon Spear -->
+                  <line x1="100" y1="40" x2="160" y2="100" stroke="#C25E5E" stroke-width="3" stroke-linecap="round"/>
+                  <polygon points="160,100 172,112 162,118" fill="#C25E5E"/>
+                  
+                  <!-- Rig Joints -->
+                  <circle cx="120" cy="45" r="2.5" fill="#FFF" stroke="#C25E5E"/>
+                  <circle cx="95" cy="128" r="2.5" fill="#FFF" stroke="#5B7B9E"/>
+                  <circle cx="145" cy="128" r="2.5" fill="#FFF" stroke="#5B7B9E"/>
+                </svg>
+
+                <!-- Status Badge -->
+                <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded border border-paper-border font-mono text-[10px] text-ink font-semibold flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent-red"></span>
+                  SPINE 2D SKELETAL
+                </div>
+
+                <div class="absolute top-3 right-3 bg-accent-blue-light text-accent-blue px-2.5 py-1 rounded border border-accent-blue/30 font-mono text-[10px] font-bold">
+                  60 FPS SMOOTH
+                </div>
+              </div>
+
+              <!-- Hover Action Overlay -->
+              <div class="absolute inset-0 bg-ink/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 backdrop-blur-[2px]">
+                <button onclick="openProjectModal('valkyrie')" class="px-4 py-2 bg-accent-red text-white text-xs font-semibold rounded uppercase tracking-wider hover:bg-accent-red-dark transition-colors shadow-md">
+                  View Case Study
+                </button>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 sm:p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <!-- Category Tags -->
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="px-2.5 py-0.5 rounded-full bg-accent-blue-light text-accent-blue text-xs font-semibold">Character Rigging</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-paper-dark text-ink-light text-xs font-medium">Walk / Run / Jump Cycles</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-accent-red-light text-accent-red text-xs font-semibold">Unity Integration</span>
+                </div>
+
+                <h3 class="font-serif text-2xl font-bold text-ink group-hover:text-accent-red transition-colors">
+                  Valkyrie's Ascent: Combat & Locomotion
+                </h3>
+
+                <p class="text-ink-light text-sm leading-relaxed mt-2.5">
+                  Complete animation suite for the protagonist in a 2D Norse metroidvania. Rigged with Spine 2D mesh weighted vertices for cloth flow, dynamic IK constraints for weapon swinging, and 8-directional smooth directional blending.
+                </p>
+              </div>
+
+              <!-- Technical Specs List -->
+              <div class="mt-6 pt-4 border-t border-paper-border flex items-center justify-between text-xs font-mono text-ink-muted">
+                <span>KEYS: 120+ ANIMATIONS</span>
+                <span class="text-accent-red font-semibold">ATLAS: 2048x2048 (1 DRAW CALL)</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- PROJECT CARD 2: Abyssal Rift VFX -->
+          <div class="group bg-white rounded-xl border-2 border-paper-border hover:border-accent-red transition-all duration-300 shadow-paper hover:shadow-paper-hover flex flex-col overflow-hidden">
+            
+            <!-- Card Visual Header / Preview -->
+            <div class="relative aspect-[16/10] bg-paper-dark overflow-hidden border-b border-paper-border">
+              
+              <!-- Visual Mockup Canvas -->
+              <div class="absolute inset-0 flex items-center justify-center p-6 bg-gradient-to-br from-[#F5F8FA] to-[#E5EDF4]">
+                <!-- Interactive Animated SVG Preview for Elemental Attack VFX -->
+                <svg class="w-full h-full max-w-[280px] transition-transform duration-500 group-hover:scale-105" viewBox="0 0 240 150" fill="none">
+                  <!-- Impact Center Burst -->
+                  <circle cx="120" cy="75" r="30" stroke="#C25E5E" stroke-width="3" stroke-dasharray="8 6" class="animate-spin-slow"/>
+                  <circle cx="120" cy="75" r="12" fill="#C25E5E" opacity="0.8"/>
+                  
+                  <!-- Slash Blades / Elemental Trails -->
+                  <path d="M 40 120 C 80 40 160 30 200 80" stroke="#5B7B9E" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+                  <path d="M 60 135 C 90 60 150 50 180 90" stroke="#C25E5E" stroke-width="3" stroke-linecap="round"/>
+                  
+                  <!-- Particle Bursts & Sparks -->
+                  <circle cx="85" cy="55" r="3" fill="#C25E5E"/>
+                  <circle cx="160" cy="45" r="2.5" fill="#5B7B9E"/>
+                  <circle cx="190" cy="110" r="3.5" fill="#C25E5E"/>
+                  <circle cx="50" cy="95" r="2" fill="#5B7B9E"/>
+                  <polygon points="120,35 125,48 138,48 128,56 132,68 120,60 108,68 112,56 102,48 115,48" fill="#5B7B9E"/>
+                </svg>
+
+                <!-- Status Badge -->
+                <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded border border-paper-border font-mono text-[10px] text-ink font-semibold flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent-blue"></span>
+                  FRAME-BY-FRAME FX
+                </div>
+
+                <div class="absolute top-3 right-3 bg-accent-red-light text-accent-red px-2.5 py-1 rounded border border-accent-red/30 font-mono text-[10px] font-bold">
+                  24 FPS TRADITIONAL
+                </div>
+              </div>
+
+              <!-- Hover Action Overlay -->
+              <div class="absolute inset-0 bg-ink/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 backdrop-blur-[2px]">
+                <button onclick="openProjectModal('abyssal')" class="px-4 py-2 bg-accent-red text-white text-xs font-semibold rounded uppercase tracking-wider hover:bg-accent-red-dark transition-colors shadow-md">
+                  View Case Study
+                </button>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 sm:p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <!-- Category Tags -->
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="px-2.5 py-0.5 rounded-full bg-accent-blue-light text-accent-blue text-xs font-semibold">Elemental VFX</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-paper-dark text-ink-light text-xs font-medium">Attack Impact Frames</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-accent-red-light text-accent-red text-xs font-semibold">Sprite Sheets</span>
+                </div>
+
+                <h3 class="font-serif text-2xl font-bold text-ink group-hover:text-accent-red transition-colors">
+                  Abyssal Rift: Elemental Attack VFX
+                </h3>
+
+                <p class="text-ink-light text-sm leading-relaxed mt-2.5">
+                  Hand-crafted 24fps frame-by-frame 2D animated special effects: lightning arcs, soul bursts, ground-shatter shockwaves, and bloody impact splatters designed to give game attacks weighty feedback and tactile crunch.
+                </p>
+              </div>
+
+              <!-- Technical Specs List -->
+              <div class="mt-6 pt-4 border-t border-paper-border flex items-center justify-between text-xs font-mono text-ink-muted">
+                <span>FORMAT: PNG SPRITE SEQUENCES</span>
+                <span class="text-accent-blue font-semibold">HIT-STOP FRAME OPTIMIZED</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- PROJECT CARD 3: Cyber Rogue State Transitions -->
+          <div class="group bg-white rounded-xl border-2 border-paper-border hover:border-accent-red transition-all duration-300 shadow-paper hover:shadow-paper-hover flex flex-col overflow-hidden">
+            
+            <!-- Card Visual Header / Preview -->
+            <div class="relative aspect-[16/10] bg-paper-dark overflow-hidden border-b border-paper-border">
+              
+              <!-- Visual Mockup Canvas -->
+              <div class="absolute inset-0 flex items-center justify-center p-6 bg-gradient-to-br from-[#FAF7F7] to-[#EDE4E4]">
+                <!-- Interactive Animated SVG Preview -->
+                <svg class="w-full h-full max-w-[280px] transition-transform duration-500 group-hover:scale-105" viewBox="0 0 240 150" fill="none">
+                  <!-- State Machine Connection Graph -->
+                  <rect x="25" y="25" width="55" height="26" rx="4" fill="#FFFFFF" stroke="#5B7B9E" stroke-width="1.5"/>
+                  <text x="35" y="42" font-family="monospace" font-size="9" fill="#5B7B9E" font-weight="bold">IDLE_01</text>
+                  
+                  <rect x="155" y="25" width="60" height="26" rx="4" fill="#FFFFFF" stroke="#C25E5E" stroke-width="1.5"/>
+                  <text x="163" y="42" font-family="monospace" font-size="9" fill="#C25E5E" font-weight="bold">DASH_ATK</text>
+                  
+                  <rect x="90" y="95" width="60" height="26" rx="4" fill="#FFFFFF" stroke="#2C2C2C" stroke-width="1.5"/>
+                  <text x="98" y="112" font-family="monospace" font-size="9" fill="#2C2C2C" font-weight="bold">RECOVERY</text>
+
+                  <!-- Transitions -->
+                  <line x1="80" y1="38" x2="155" y2="38" stroke="#C25E5E" stroke-width="2" marker-end="url(#arrow)"/>
+                  <line x1="185" y1="51" x2="140" y2="95" stroke="#5B7B9E" stroke-width="2" stroke-dasharray="3 3"/>
+                  <line x1="100" y1="95" x2="55" y2="51" stroke="#2C2C2C" stroke-width="2"/>
+                </svg>
+
+                <!-- Status Badge -->
+                <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded border border-paper-border font-mono text-[10px] text-ink font-semibold flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent-red"></span>
+                  STATE MACHINE RIGS
+                </div>
+
+                <div class="absolute top-3 right-3 bg-paper-dark text-ink px-2.5 py-1 rounded border border-paper-border font-mono text-[10px] font-bold">
+                  ZERO BLEND CLIPPING
+                </div>
+              </div>
+
+              <!-- Hover Action Overlay -->
+              <div class="absolute inset-0 bg-ink/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 backdrop-blur-[2px]">
+                <button onclick="openProjectModal('cyber')" class="px-4 py-2 bg-accent-red text-white text-xs font-semibold rounded uppercase tracking-wider hover:bg-accent-red-dark transition-colors shadow-md">
+                  View Case Study
+                </button>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 sm:p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <!-- Category Tags -->
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="px-2.5 py-0.5 rounded-full bg-accent-blue-light text-accent-blue text-xs font-semibold">Dynamic Idles</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-paper-dark text-ink-light text-xs font-medium">Secondary Physics</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-accent-red-light text-accent-red text-xs font-semibold">State Blending</span>
+                </div>
+
+                <h3 class="font-serif text-2xl font-bold text-ink group-hover:text-accent-red transition-colors">
+                  Cyber Rogue: Dynamic Idles & Transitions
+                </h3>
+
+                <p class="text-ink-light text-sm leading-relaxed mt-2.5">
+                  Breathing personality into gameplay through reactive idle states (alert, wounded, impatient), seamless blend-tree transitions without bone pops, and responsive dodge-cancel animations tuned for competitive responsiveness.
+                </p>
+              </div>
+
+              <!-- Technical Specs List -->
+              <div class="mt-6 pt-4 border-t border-paper-border flex items-center justify-between text-xs font-mono text-ink-muted">
+                <span>BLEND TIME: 0.08 SEC</span>
+                <span class="text-accent-red font-semibold">CUSTOM SPINE EVENTS</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- PROJECT CARD 4: Hearth & Blade UI Motion -->
+          <div class="group bg-white rounded-xl border-2 border-paper-border hover:border-accent-red transition-all duration-300 shadow-paper hover:shadow-paper-hover flex flex-col overflow-hidden">
+            
+            <!-- Card Visual Header / Preview -->
+            <div class="relative aspect-[16/10] bg-paper-dark overflow-hidden border-b border-paper-border">
+              
+              <!-- Visual Mockup Canvas -->
+              <div class="absolute inset-0 flex items-center justify-center p-6 bg-gradient-to-br from-[#FAF8F5] to-[#E9E4DB]">
+                <!-- Interactive Animated SVG Preview for Game UI Motion -->
+                <svg class="w-full h-full max-w-[280px] transition-transform duration-500 group-hover:scale-105" viewBox="0 0 240 150" fill="none">
+                  <!-- UI Inventory Card Mockup -->
+                  <rect x="40" y="25" width="160" height="100" rx="8" fill="#FFFFFF" stroke="#C25E5E" stroke-width="2"/>
+                  <!-- Top Banner -->
+                  <path d="M40 33 C40 28 44 25 50 25 L190 25 C196 25 200 28 200 33 L200 48 L40 48 Z" fill="#5B7B9E"/>
+                  <text x="55" y="41" font-family="serif" font-size="10" fill="#FFFFFF" font-weight="bold">LEGENDARY LOOT REVEAL</text>
+                  
+                  <!-- Item Slot with Glow Rings -->
+                  <circle cx="80" cy="85" r="22" fill="#FBF9F5" stroke="#C25E5E" stroke-width="1.5" stroke-dasharray="4 2"/>
+                  <polygon points="80,72 88,85 80,98 72,85" fill="#C25E5E"/>
+                  
+                  <!-- Micro-interaction Sparkles -->
+                  <line x1="120" y1="70" x2="180" y2="70" stroke="#2C2C2C" stroke-width="3" stroke-linecap="round"/>
+                  <line x1="120" y1="82" x2="165" y2="82" stroke="#85837F" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="120" y1="94" x2="150" y2="94" stroke="#85837F" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+
+                <!-- Status Badge -->
+                <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded border border-paper-border font-mono text-[10px] text-ink font-semibold flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent-blue"></span>
+                  GAME UI & UX MOTION
+                </div>
+
+                <div class="absolute top-3 right-3 bg-accent-blue-light text-accent-blue px-2.5 py-1 rounded border border-accent-blue/30 font-mono text-[10px] font-bold">
+                  AFTER EFFECTS & LOTTIE
+                </div>
+              </div>
+
+              <!-- Hover Action Overlay -->
+              <div class="absolute inset-0 bg-ink/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 backdrop-blur-[2px]">
+                <button onclick="openProjectModal('hearth')" class="px-4 py-2 bg-accent-red text-white text-xs font-semibold rounded uppercase tracking-wider hover:bg-accent-red-dark transition-colors shadow-md">
+                  View Case Study
+                </button>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 sm:p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <!-- Category Tags -->
+                <div class="flex flex-wrap gap-2 mb-3">
+                  <span class="px-2.5 py-0.5 rounded-full bg-accent-blue-light text-accent-blue text-xs font-semibold">UI Micro-Interactions</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-paper-dark text-ink-light text-xs font-medium">HUD & Menus</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-accent-red-light text-accent-red text-xs font-semibold">Lottie / Unity UI</span>
+                </div>
+
+                <h3 class="font-serif text-2xl font-bold text-ink group-hover:text-accent-red transition-colors">
+                  Hearth & Blade: Combat UI & HUD Motion
+                </h3>
+
+                <p class="text-ink-light text-sm leading-relaxed mt-2.5">
+                  Snappy, rewarding interface animations including critical damage number bounces, loot unlock chest blooms, stamina gauge shakes, and cinematic card-flip transition shaders designed for high game feel.
+                </p>
+              </div>
+
+              <!-- Technical Specs List -->
+              <div class="mt-6 pt-4 border-t border-paper-border flex items-center justify-between text-xs font-mono text-ink-muted">
+                <span>FORMAT: JSON / PREFABS</span>
+                <span class="text-accent-blue font-semibold">60FPS ZERO LATENCY</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <!-- ==================== SKILLSETS & EXPERIENCE BLOCKS ==================== -->
+    <section id="pipeline" class="py-20 md:py-28 border-b border-paper-border bg-paper">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-blue-light border border-accent-blue/30 text-accent-blue text-xs font-semibold uppercase tracking-wider mb-3">
+            Technical Proficiency & Pipeline
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-ink tracking-tight">
+            Software Toolkit & Game Pipeline
+          </h2>
+          <p class="text-ink-light text-base md:text-lg mt-4 font-normal">
+            Equipped with industry-standard 2D software and a battle-tested technical pipeline built to work directly with game programmers and technical artists.
+          </p>
+        </div>
+
+        <!-- Two Distinct Side-by-Side Blocks -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+
+          <!-- Block 1: Technical Software Proficiency (Col 6) -->
+          <div class="lg:col-span-6 bg-white rounded-2xl border-2 border-paper-border p-8 shadow-paper flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between border-b border-paper-border pb-4 mb-6">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded bg-accent-red-light text-accent-red flex items-center justify-center font-bold text-sm">
+                    01
+                  </div>
+                  <h3 class="font-serif text-2xl font-bold text-ink">Software Mastery</h3>
+                </div>
+                <span class="font-mono text-xs text-accent-blue font-semibold">CORE RIGGING TOOLS</span>
+              </div>
+
+              <!-- Software Skill List with Visual Metres -->
+              <div class="space-y-6">
+                
+                <!-- Spine 2D Pro -->
+                <div>
+                  <div class="flex justify-between items-center text-sm font-semibold mb-1.5">
+                    <span class="text-ink flex items-center gap-2">
+                      <strong class="text-accent-red font-bold">Spine 2D Professional</strong>
+                      <span class="text-[11px] font-mono font-normal text-ink-muted">(IK/FK, Mesh Weights, Constraints)</span>
+                    </span>
+                    <span class="font-mono text-xs text-accent-red font-bold">98%</span>
+                  </div>
+                  <div class="w-full bg-paper-dark h-2.5 rounded-full overflow-hidden border border-paper-border">
+                    <div class="bg-accent-red h-full rounded-full w-[98%]"></div>
+                  </div>
+                </div>
+
+                <!-- Adobe After Effects -->
+                <div>
+                  <div class="flex justify-between items-center text-sm font-semibold mb-1.5">
+                    <span class="text-ink flex items-center gap-2">
+                      <strong class="text-accent-blue font-bold">Adobe After Effects</strong>
+                      <span class="text-[11px] font-mono font-normal text-ink-muted">(Motion Graphics, Lottie, Duik)</span>
+                    </span>
+                    <span class="font-mono text-xs text-accent-blue font-bold">92%</span>
+                  </div>
+                  <div class="w-full bg-paper-dark h-2.5 rounded-full overflow-hidden border border-paper-border">
+                    <div class="bg-accent-blue h-full rounded-full w-[92%]"></div>
+                  </div>
+                </div>
+
+                <!-- Photoshop & Clip Studio Paint -->
+                <div>
+                  <div class="flex justify-between items-center text-sm font-semibold mb-1.5">
+                    <span class="text-ink flex items-center gap-2">
+                      <strong class="text-ink font-bold">Photoshop & Clip Studio</strong>
+                      <span class="text-[11px] font-mono font-normal text-ink-muted">(Character Slicing, FX Sheets)</span>
+                    </span>
+                    <span class="font-mono text-xs text-ink font-bold">90%</span>
+                  </div>
+                  <div class="w-full bg-paper-dark h-2.5 rounded-full overflow-hidden border border-paper-border">
+                    <div class="bg-ink h-full rounded-full w-[90%]"></div>
+                  </div>
+                </div>
+
+                <!-- Unity 2D Engine Integration -->
+                <div>
+                  <div class="flex justify-between items-center text-sm font-semibold mb-1.5">
+                    <span class="text-ink flex items-center gap-2">
+                      <strong class="text-accent-red font-bold">Unity (Mecanim & Spine Runtime)</strong>
+                      <span class="text-[11px] font-mono font-normal text-ink-muted">(Blend Trees, State Events)</span>
+                    </span>
+                    <span class="font-mono text-xs text-accent-red font-bold">88%</span>
+                  </div>
+                  <div class="w-full bg-paper-dark h-2.5 rounded-full overflow-hidden border border-paper-border">
+                    <div class="bg-accent-red h-full rounded-full w-[88%]"></div>
+                  </div>
+                </div>
+
+                <!-- Blender 2D Grease Pencil -->
+                <div>
+                  <div class="flex justify-between items-center text-sm font-semibold mb-1.5">
+                    <span class="text-ink flex items-center gap-2">
+                      <strong class="text-accent-blue font-bold">Blender (Grease Pencil & 2.5D)</strong>
+                      <span class="text-[11px] font-mono font-normal text-ink-muted">(Camera Parallax Previs)</span>
+                    </span>
+                    <span class="font-mono text-xs text-accent-blue font-bold">80%</span>
+                  </div>
+                  <div class="w-full bg-paper-dark h-2.5 rounded-full overflow-hidden border border-paper-border">
+                    <div class="bg-accent-blue h-full rounded-full w-[80%]"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-paper-border flex flex-wrap gap-2 text-xs font-mono text-ink-muted">
+              <span class="bg-paper-dark px-2.5 py-1 rounded">TexturePacker</span>
+              <span class="bg-paper-dark px-2.5 py-1 rounded">Aseprite</span>
+              <span class="bg-paper-dark px-2.5 py-1 rounded">Git LFS</span>
+              <span class="bg-paper-dark px-2.5 py-1 rounded">Unreal Paper2D</span>
+            </div>
+          </div>
+
+          <!-- Block 2: Workflow, Production Pipeline & Experience (Col 6) -->
+          <div class="lg:col-span-6 bg-white rounded-2xl border-2 border-paper-border p-8 shadow-paper flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between border-b border-paper-border pb-4 mb-6">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded bg-accent-blue-light text-accent-blue flex items-center justify-center font-bold text-sm">
+                    02
+                  </div>
+                  <h3 class="font-serif text-2xl font-bold text-ink">Production Pipeline</h3>
+                </div>
+                <span class="font-mono text-xs text-accent-red font-semibold">STUDIO EXPERIENCE</span>
+              </div>
+
+              <!-- Step by step pipeline flow -->
+              <div class="space-y-5">
+                
+                <!-- Stage 1 -->
+                <div class="flex items-start gap-4">
+                  <div class="w-8 h-8 rounded-full bg-paper-dark border border-paper-border flex items-center justify-center font-mono text-xs font-bold text-accent-red shrink-0 mt-0.5">
+                    01
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-bold text-ink">Art Slicing & Mesh Topology</h4>
+                    <p class="text-xs text-ink-light leading-relaxed mt-0.5">
+                      Preparing layered character concept PSDs, isolating joints, and generating clean polygon mesh topologies that bend naturally without texture stretching.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Stage 2 -->
+                <div class="flex items-start gap-4">
+                  <div class="w-8 h-8 rounded-full bg-paper-dark border border-paper-border flex items-center justify-center font-mono text-xs font-bold text-accent-blue shrink-0 mt-0.5">
+                    02
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-bold text-ink">Skeletal Hierarchy & IK Constraints</h4>
+                    <p class="text-xs text-ink-light leading-relaxed mt-0.5">
+                      Building ergonomic bone rigs with inverse kinematics for planted feet, aim-at weapon targeting, and transform constraints for secondary jiggle physics.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Stage 3 -->
+                <div class="flex items-start gap-4">
+                  <div class="w-8 h-8 rounded-full bg-paper-dark border border-paper-border flex items-center justify-center font-mono text-xs font-bold text-accent-red shrink-0 mt-0.5">
+                    03
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-bold text-ink">Keyframing, Easing Curves & Hit-Stops</h4>
+                    <p class="text-xs text-ink-light leading-relaxed mt-0.5">
+                      Applying the 12 principles of animation with sharp anticipation, non-linear Bezier easing curves, and frame-held impacts for unmistakable combat clarity.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Stage 4 -->
+                <div class="flex items-start gap-4">
+                  <div class="w-8 h-8 rounded-full bg-paper-dark border border-paper-border flex items-center justify-center font-mono text-xs font-bold text-accent-blue shrink-0 mt-0.5">
+                    04
+                  </div>
+                  <div>
+                    <h4 class="text-sm font-bold text-ink">Sprite Packing & Runtime Performance</h4>
+                    <p class="text-xs text-ink-light leading-relaxed mt-0.5">
+                      Exporting lightweight JSON skeletons and tight atlas textures with zero wasted transparent padding, fully tested inside Unity sample scenes.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Studio Experience Banner -->
+            <div class="mt-8 pt-4 border-t border-paper-border flex items-center justify-between">
+              <span class="font-mono text-xs text-ink-muted">EXP: 5+ YRS IN INDIE GAMES</span>
+              <span class="font-serif italic text-accent-red font-medium text-sm">"Motion is gameplay feedback"</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT & COLLABORATION SECTION ==================== -->
+    <section id="contact" class="py-20 md:py-28 bg-white relative">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-red-light border border-accent-red/30 text-accent-red text-xs font-semibold uppercase tracking-wider mb-4">
+          Ready for New Adventures
+        </div>
+
+        <h2 class="font-serif text-3xl sm:text-5xl font-extrabold text-ink tracking-tight">
+          Let's Animate Your Next Game Project.
+        </h2>
+
+        <p class="text-ink-light text-base md:text-lg max-w-xl mx-auto mt-4 leading-relaxed font-normal">
+          Whether you're developing a stylish indie metroidvania, an action roguelite, or mobile arcade hit, I'm available for freelance animation contracts, rig consultancy, and studio roles.
+        </p>
+
+        <!-- Quick Contact Email Box with One-Click Copy -->
+        <div class="mt-8 max-w-md mx-auto bg-paper-dark p-3 rounded-xl border border-paper-border flex items-center justify-between gap-3 shadow-sm">
+          <div class="flex items-center gap-2.5 pl-3 overflow-hidden">
+            <svg class="w-5 h-5 text-accent-red shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <span id="email-text" class="font-mono text-sm text-ink font-semibold truncate select-all">fardin.animates@gmail.com</span>
+          </div>
+
+          <button 
+            id="copy-email-btn"
+            onclick="copyEmailToClipboard()"
+            class="px-4 py-2 bg-accent-red text-white text-xs font-semibold rounded-lg hover:bg-accent-red-dark transition-all duration-200 shrink-0 font-mono"
+          >
+            Copy Email
+          </button>
+        </div>
+
+        <!-- Toast Feedback Notification (Hidden by default) -->
+        <div id="copy-toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-ink text-white px-5 py-3 rounded-lg shadow-xl flex items-center gap-3 font-mono text-xs">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>Email copied to clipboard!</span>
+        </div>
+
+        <!-- Social / Portfolio Platform Links -->
+        <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 mt-10">
+          <a href="https://www.behance.net/fardinsayyedm/projects" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 bg-white border border-paper-border hover:border-accent-blue hover:text-accent-blue text-ink text-xs font-mono font-semibold rounded-md shadow-xs transition-all hover:-translate-y-0.5 flex items-center gap-2">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-4.148 0-5.625-3.078-5.625-5.832 0-3.487 2.177-6.168 5.727-6.168 3.737 0 5.273 2.766 5.273 6.004 0 .428-.047.88-.088 1.168h-7.989c.074 1.838 1.344 3.008 3.094 3.008 1.459 0 2.295-.697 2.709-1.18zm-5.041-6.172c-1.344 0-2.316.898-2.484 2.379h4.885c-.092-1.332-.885-2.379-2.401-2.379zm-13.685 9.172h-5v-16h5.885c3.279 0 5.115 1.701 5.115 4.316 0 1.58-.875 2.947-2.227 3.561 1.758.557 2.727 2.164 2.727 4.09 0 2.781-1.996 4.033-5.5 4.033zm-2.129-9.664h2.242c1.477 0 2.459-.574 2.459-1.947 0-1.25-.867-1.803-2.352-1.803h-2.349v3.75zm0 6.641h2.529c1.693 0 2.771-.678 2.771-2.197 0-1.477-1.107-2.18-2.795-2.18h-2.505v4.377z"/>
+            </svg>
+            <span>Behance</span> ↗
+          </a>
+
+          <a href="http://www.linkedin.com/in/fardin-sayyed-08624027a" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 bg-white border border-paper-border hover:border-accent-blue hover:text-accent-blue text-ink text-xs font-mono font-semibold rounded-md shadow-xs transition-all hover:-translate-y-0.5 flex items-center gap-2">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            <span>LinkedIn</span> ↗
+          </a>
+
+          <a href="https://www.instagram.com/gamabunt0?stkn=MWV4NWlzbTVzMnkxOQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 bg-white border border-paper-border hover:border-accent-red hover:text-accent-red text-ink text-xs font-mono font-semibold rounded-md shadow-xs transition-all hover:-translate-y-0.5 flex items-center gap-2">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            <span>Instagram (@gamabunt0)</span> ↗
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-paper-dark border-t border-paper-border py-10 text-xs font-mono text-ink-muted">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand & Copyright -->
+      <div class="flex items-center gap-2">
+        <span class="font-serif font-bold text-sm text-ink tracking-wide">FARDEEN SAYYED</span>
+        <span>•</span>
+        <span>© 2026 All Rights Reserved.</span>
+      </div>
+
+      <!-- Center tagline & Quick Socials -->
+      <div class="flex flex-col items-center gap-2">
+        <div class="text-ink-light text-center">
+          Engineered with Spine 2D • Hand-Drawn 24fps • Unity Mecanim Ready
+        </div>
+        <div class="flex items-center gap-4 text-xs font-mono">
+          <a href="https://www.behance.net/fardinsayyedm/projects" target="_blank" rel="noopener noreferrer" class="hover:text-accent-blue transition-colors">Behance</a>
+          <span>•</span>
+          <a href="http://www.linkedin.com/in/fardin-sayyed-08624027a" target="_blank" rel="noopener noreferrer" class="hover:text-accent-blue transition-colors">LinkedIn</a>
+          <span>•</span>
+          <a href="https://www.instagram.com/gamabunt0?stkn=MWV4NWlzbTVzMnkxOQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="hover:text-accent-red transition-colors">Instagram</a>
+        </div>
+      </div>
+
+      <!-- Back to top -->
+      <a href="#hero" class="hover:text-accent-red transition-colors flex items-center gap-1">
+        <span>BACK TO TOP</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+      </a>
+
+    </div>
+  </footer>
+
+  <!-- ==================== INTERACTIVE MODALS ==================== -->
+
+  <!-- 1. VIDEO SHOWREEL CINEMATIC MODAL -->
+  <div id="video-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 bg-black/85 modal-backdrop transition-opacity duration-300">
+    <div class="relative w-full max-w-4xl bg-ink rounded-2xl overflow-hidden border-2 border-accent-red shadow-2xl">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between px-6 py-4 bg-paper-dark border-b border-paper-border">
+        <div class="flex items-center gap-3">
+          <span class="w-2.5 h-2.5 rounded-full bg-accent-red animate-pulse"></span>
+          <span class="font-mono text-xs font-bold text-ink">SHOWREEL_2026_MASTER_60FPS.mp4</span>
+        </div>
+        <button onclick="closeVideoModal()" aria-label="Close Showreel Modal" class="p-1 rounded text-ink-muted hover:text-accent-red hover:bg-paper-border transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Simulated Video Player with High-Tech Studio Controls -->
+      <div class="relative aspect-video bg-black flex items-center justify-center">
+        
+        <!-- Live Animated Video Showcase Preview (WebGL / SVG Animation simulation) -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#161214] via-[#211a24] to-[#121c24] flex flex-col items-center justify-center p-6 text-center">
+          
+          <div class="relative z-10 space-y-4">
+            <!-- Pulsing Animation Ring -->
+            <div class="relative w-24 h-24 mx-auto">
+              <div class="absolute inset-0 rounded-full border-2 border-accent-red animate-ping opacity-30"></div>
+              <div class="w-24 h-24 rounded-full bg-accent-red/20 border-2 border-accent-red flex items-center justify-center text-accent-red">
+                <svg class="w-10 h-10 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <h4 class="font-serif text-xl sm:text-2xl font-bold text-white tracking-wide">
+                Fardeen Sayyed • 2D Animation Reel 2026
+              </h4>
+              <p class="text-xs sm:text-sm text-accent-blue font-mono">
+                Now Streaming High-Bitrate Gameplay Captures
+              </p>
+            </div>
+
+            <!-- Sequence Chapters -->
+            <div class="flex flex-wrap justify-center gap-2 pt-2 text-[11px] font-mono text-white/70">
+              <span class="bg-white/10 px-2 py-1 rounded">00:00 Spine 2D Combat</span>
+              <span class="bg-white/10 px-2 py-1 rounded">00:32 Frame FX</span>
+              <span class="bg-white/10 px-2 py-1 rounded">00:58 Boss Rigs</span>
+              <span class="bg-white/10 px-2 py-1 rounded">01:15 UI Motion</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Player Bottom Bar -->
+      <div class="p-4 bg-paper-dark border-t border-paper-border flex items-center justify-between text-xs font-mono text-ink">
+        <div class="flex items-center gap-3">
+          <span class="text-accent-red font-bold">● REC PLAYBACK</span>
+          <span class="text-ink-muted">AUDIO: STEREO 320kbps</span>
+        </div>
+        <button onclick="closeVideoModal()" class="px-4 py-1.5 bg-accent-red text-white rounded font-semibold text-xs hover:bg-accent-red-dark transition-colors">
+          Close Player
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2. PROJECT DETAIL CASE STUDY MODAL -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 bg-black/85 modal-backdrop transition-opacity duration-300">
+    <div class="relative w-full max-w-3xl max-h-[90vh] bg-white rounded-2xl overflow-y-auto border-2 border-accent-red shadow-2xl">
+      
+      <!-- Modal Top Bar -->
+      <div class="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-paper border-b border-paper-border">
+        <div class="flex items-center gap-2 font-mono text-xs text-accent-blue font-bold">
+          <span>// CASE STUDY INSPECTOR</span>
+        </div>
+        <button onclick="closeProjectModal()" aria-label="Close Project Modal" class="p-1.5 rounded text-ink-muted hover:text-accent-red hover:bg-paper-border transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Dynamic Content Injection Area -->
+      <div id="project-modal-content" class="p-6 sm:p-8 space-y-6">
+        <!-- Content will be injected by JavaScript -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="sticky bottom-0 px-6 py-4 bg-paper-dark border-t border-paper-border flex items-center justify-between">
+        <span class="text-xs font-mono text-ink-muted">FARDEEN SAYYED ANIMATION PIPELINE</span>
+        <button onclick="closeProjectModal()" class="px-4 py-2 bg-ink text-white rounded text-xs font-semibold hover:bg-accent-red transition-colors">
+          Done Reading
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==================== VANILLA JAVASCRIPT ==================== -->
+  <script>
+    // --- Mobile Menu Toggle ---
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // --- Video Showreel Modal Handlers ---
+    function openVideoModal() {
+      const modal = document.getElementById('video-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('video-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // --- Project Modal Data & Handlers ---
+    const projectData = {
+      valkyrie: {
+        title: "Valkyrie's Ascent: Character Combat & Locomotion",
+        tags: ["Spine 2D Pro", "Unity Mecanim", "IK Constraints", "Weighted Meshes"],
+        description: "A comprehensive breakdown of the animation pipeline for the hero character in a 2D Norse-themed action platformer.",
+        sections: [
+          {
+            heading: "Technical Rigging Architecture",
+            body: "The character rig utilizes a multi-layered bone hierarchy in Spine 2D Pro with 38 primary bones, 14 secondary physics deformers for cape and braid dynamics, and dual IK constraints for responsive weapon aiming across 360 degrees."
+          },
+          {
+            heading: "State Machine & Blend Trees",
+            body: "Constructed Unity 2D blend trees ensuring transitions between sprint, heavy slash, parry recovery, and ledge clambers happen within 0.06s with zero visual jitter or bone flipping."
+          },
+          {
+            heading: "Optimization Results",
+            body: "Combined all weapon skins and armor sets into a single 2048x2048 atlas, reducing character draw calls from 14 to exactly 1 per instance on mobile devices."
+          }
+        ]
+      },
+      abyssal: {
+        title: "Abyssal Rift: Elemental Attack VFX & FX Sheets",
+        tags: ["Clip Studio Paint", "24 FPS Traditional", "Hand-Drawn FX", "Sprite Sheets"],
+        description: "Hand-crafted 2D traditional frame-by-frame visual effects for combat impacts, spell charges, and environmental hazards.",
+        sections: [
+          {
+            heading: "Smear Frames & Impact Timing",
+            body: "Implemented exaggerated smear frames on 1s and 2s to deliver visceral anticipation followed by single-frame explosive contact frames that emphasize kinetic punch."
+          },
+          {
+            heading: "Color Palette & Readability",
+            body: "Designed with high-contrast color hierarchies (Muted Red for physical impact waves, Electric Blue for magical resonance) to ensure battlefield clarity even in chaotic boss fights."
+          }
+        ]
+      },
+      cyber: {
+        title: "Cyber Rogue: Dynamic Idle & State Transitions",
+        tags: ["Spine 2D", "State Machine", "Secondary Physics", "Gameplay Feel"],
+        description: "Designing personality-rich idle loops, breathing rhythms, and combat recovery frames for agile roguelite combatants.",
+        sections: [
+          {
+            heading: "Context-Aware Idles",
+            body: "Built a 3-tier idle state engine that transitions from calm breathing (out of combat) to high-adrenaline tactical stance (near enemies) and wounded stagger (below 25% HP)."
+          },
+          {
+            heading: "Secondary Motion Curves",
+            body: "Used custom cubic Bezier curves in Spine 2D graph editor to simulate cybernetic cable momentum and coat tail inertia without reliance on expensive physics CPU checks."
+          }
+        ]
+      },
+      hearth: {
+        title: "Hearth & Blade: UI Motion & Combat Micro-Interactions",
+        tags: ["After Effects", "Lottie / JSON", "Unity UI", "Sound Sync"],
+        description: "Micro-animations that turn menu navigation, loot chest openings, and critical damage hits into rewarding sensory experiences.",
+        sections: [
+          {
+            heading: "Juice & Tactile Feedback",
+            body: "Designed spring-loaded button depressions, card-hover tilts with pseudo-3D parallax, and screen-space burst particles synced down to the millisecond with audio triggers."
+          },
+          {
+            heading: "Performance & Lottie Export",
+            body: "Delivered vector-based Lottie JSON animations with sub-50KB memory footprints, keeping UI render batches completely decoupled from 3D/2D game rendering."
+          }
+        ]
+      }
+    };
+
+    function openProjectModal(projectId) {
+      const modal = document.getElementById('project-modal');
+      const content = document.getElementById('project-modal-content');
+      const data = projectData[projectId];
+
+      if (!modal || !content || !data) return;
+
+      let tagsHtml = data.tags.map(tag => 
+        `<span class="px-2.5 py-1 rounded bg-accent-blue-light text-accent-blue font-mono text-xs font-semibold">${tag}</span>`
+      ).join('');
+
+      let sectionsHtml = data.sections.map(sec => `
+        <div class="border-l-2 border-accent-red pl-4 py-1">
+          <h4 class="font-serif text-lg font-bold text-ink">${sec.heading}</h4>
+          <p class="text-ink-light text-sm mt-1 leading-relaxed">${sec.body}</p>
+        </div>
+      `).join('');
+
+      content.innerHTML = `
+        <div>
+          <div class="flex flex-wrap gap-2 mb-3">${tagsHtml}</div>
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-ink">${data.title}</h3>
+          <p class="text-ink-light text-sm md:text-base mt-2">${data.description}</p>
+        </div>
+        <div class="space-y-4 pt-2">
+          ${sectionsHtml}
+        </div>
+      `;
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById('project-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close Modals on Escape Key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeVideoModal();
+        closeProjectModal();
+      }
+    });
+
+    // --- Copy Email to Clipboard with Toast Notification ---
+    function copyEmailToClipboard() {
+      const emailText = document.getElementById('email-text').textContent;
+      navigator.clipboard.writeText(emailText).then(() => {
+        const toast = document.getElementById('copy-toast');
+        if (toast) {
+          toast.classList.remove('translate-y-20', 'opacity-0');
+          toast.classList.add('translate-y-0', 'opacity-100');
+          
+          setTimeout(() => {
+            toast.classList.remove('translate-y-0', 'opacity-100');
+            toast.classList.add('translate-y-20', 'opacity-0');
+          }, 3000);
+        }
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    }
+  </script>
+
+</body>
+</html>
